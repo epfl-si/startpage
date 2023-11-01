@@ -15,5 +15,10 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "watch": ["src"],
+    "ext": "js,json,ts,ejs,css"
   }
 }
