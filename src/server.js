@@ -14,5 +14,11 @@ app.get('/', function(req, res) {
   res.render('pages/home');
 });
 
+// catalog page
+app.get('/catalog', function(req, res) {
+  let data = require(path.join(__dirname, 'data/EPFL-services.json'));
+  res.render('pages/catalog', {data});
+});
+
 app.listen(1337);
 console.log('Server listening on port 1337');
