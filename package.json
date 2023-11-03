@@ -21,9 +21,7 @@
   },
   "nodemonConfig": {
     "verbose": true,
-    "watch": [
-      "src"
-    ],
+    "watch": ["src"],
     "ext": "js,json,ts,ejs,css"
   },
   "prettier": {
