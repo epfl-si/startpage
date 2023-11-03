@@ -6,7 +6,10 @@ const setSearchOn = (search_engine, keep_value='') => {
 const doSearchAction = (terms) => {
   //console.debug('Launching a search to', $('#search_on').text());
   let search_engine = $('#search_on').text();
-  if (search_engine == 'Go to') {
+  if (search_engine == 'DuckDuckGo') {
+    window.open('https://duckduckgo.com/?q=' + terms);
+  }
+  if (search_engine == 'EPFL Go') {
     window.open('https://go.epfl.ch/' + terms);
   }
   if (search_engine == 'Google') {
@@ -27,7 +30,16 @@ const doSearchAction = (terms) => {
   if (search_engine == 'ServiceNow') {
     window.open('https://support.epfl.ch/backoffice/$sn_global_search_results.do?sysparm_view=text_search&sysparm_search=' + terms);
   }
+  if (search_engine == 'Wikipedia') {
+    window.open('https://en.wikipedia.org/w/index.php?search=' + terms);
+  }
 }
+
+$('.dropdown-item').click(function() {
+  let searchOn = $(this).text();
+  //console.debug(searchOn);
+  setSearchOn(searchOn);
+})
 
 $('#dynamic_search').bind('keyup', function(e) {
   let terms = $(this).val();
@@ -45,9 +57,13 @@ $('#dynamic_search').bind('keyup', function(e) {
       case '?':
         setSearchOn('Google');
         break;
+      case 'd':
+        setSearchOn('DuckDuckGo');
+        break;
       case 'g':
+      case 'go':
         //console.debug('terms_Array', terms_array)
-        setSearchOn('Go to', terms_array[1]);
+        setSearchOn('EPFL Go', terms_array[1]);
         break;
       case 'm':
         setSearchOn('EPFL Map');
@@ -60,6 +76,9 @@ $('#dynamic_search').bind('keyup', function(e) {
         break;
       case 'u':
         setSearchOn('EPFL Units');
+        break;
+      case 'w':
+        setSearchOn('Wikipedia');
         break;
       default:
         // do nothing

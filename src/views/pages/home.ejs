@@ -4,20 +4,35 @@
     <%- include('partials/head'); %>
   </head>
 
-  <body>
-    <div class="container mt-5">
-      EPFL start page
-      <hr>
-      <div class="col-auto">
-        <label class="sr-only" for="inlineFormInputGroup">Username</label>
-        <div class="input-group mb-2">
-          <div class="input-group-prepend">
-            <div id="search_on" class="input-group-text">EPFL</div>
+<body>
+  <div class="container mt-5">
+    <div class="welcome">
+      EPFL Start page
+    </div>
+    <hr>
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <button id="search_on" class="btn bg-gray-200 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EPFL</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Google</a>
+            <a class="dropdown-item" href="#">DuckDuckGo</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">EPFL</a>
+            <a class="dropdown-item" href="#">EPFL Go</a>
+            <a class="dropdown-item" href="#">EPFL Map</a>
+            <a class="dropdown-item" href="#">EPFL People</a>
+            <a class="dropdown-item" href="#">EPFL Units</a>
+            <a class="dropdown-item" href="#">ServiceNow</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Wikipedia</a>
           </div>
-          <input id="dynamic_search" type="text" class="form-control" placeholder="Search…">
         </div>
+        <input id="dynamic_search" type="text" class="form-control" placeholder="Search…">
       </div>
     </div>
+  </div>
 
     <footer><%- include('partials/footer'); %></footer>
   </body>
