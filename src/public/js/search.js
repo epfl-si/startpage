@@ -93,6 +93,15 @@ $('#dynamic_search').bind('keyup', function(e) {
   if (e.keyCode == 27 && terms) {
     //console.debug('clear');
     $('#dynamic_search').val('');
+    $('#dynamic_search').focus();
+  }
+});
+
+// Global escape key
+$(document).keyup(function(e) {
+  if(e.keyCode == 27) {
+    $('#dynamic_search').val('');
+    $('#dynamic_search').focus();
     // @TODO: open help or something
   }
 });
