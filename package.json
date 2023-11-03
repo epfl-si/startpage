@@ -16,8 +16,17 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "eslint": "^8.52.0",
+    "eslint-config-standard": "^17.1.0",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3"
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "rules": {
+      "max-len": [2, 80],
+      "semi": [2, "always"]
+    }
   },
   "nodemonConfig": {
     "verbose": true,
