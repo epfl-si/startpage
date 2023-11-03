@@ -23,5 +23,16 @@
       "src"
     ],
     "ext": "js,json,ts,ejs,css"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "src/**/*.ejs",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
   }
 }
