@@ -70,10 +70,10 @@ control systems.
 
 ```sh
 # Check code format
-$ pnpm prettier
+$ pnpm lint
 
 # Fix code format
-$ pnpm prettier:fix
+$ pnpm lint:fix
 ```
 
 
