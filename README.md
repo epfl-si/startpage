@@ -1,11 +1,6 @@
 # EPFL's Start Page
 
-<<<<<<< HEAD
 [![Test Status][github-actions-image-test]][github-actions-url-test]
-
-=======
-
-> > > > > > > main
 
 ## About
 
