@@ -4,6 +4,8 @@
   "description": "Startpage for EPFL.ch",
   "main": "index.js",
   "scripts": {
+    "prettier": "prettier --check --ignore-unknown '**' '!**/*.js' '!pnpm-lock.yaml'",
+    "prettier:fix": "prettier --write --ignore-unknown '**' '!**/*.js' '!pnpm-lock.yaml'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/server.js"
   },
@@ -14,11 +16,23 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
   },
   "nodemonConfig": {
     "verbose": true,
     "watch": ["src"],
     "ext": "js,json,ts,ejs,css"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "src/**/*.ejs",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
   }
 }

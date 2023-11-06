@@ -67,7 +67,14 @@ control systems.
   a change is minimal, but larger amounts of new code should follow the guide.
 * Do not change code that doesn't directly relate to the feature/bug that you're
   working on.
-<!-- @TODO linting -->
+
+```sh
+# Check code format
+$ pnpm prettier
+
+# Fix code format
+$ pnpm prettier:fix
+```
 
 
 ## Commit messages
