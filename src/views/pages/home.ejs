@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <%- include('partials/head'); %>
@@ -10,8 +10,14 @@
         <div class="d-flex">
           <div class="w-100 mr-2">
             <p class="search-container icon-right">
-              <input id="search-input" type="search" name="search" placeholder="Search…"
-                autofocus="autofocus" class="form-control form-control-search">
+              <input
+                id="search-input"
+                type="search"
+                name="search"
+                placeholder="Search…"
+                autofocus="autofocus"
+                class="form-control form-control-search"
+              />
               <svg aria-hidden="true" class="icon">
                 <use xlink:href="#icon-search"></use>
               </svg>
@@ -21,8 +27,6 @@
       </div>
     </div>
 
-    <footer>
-      <%- include('partials/footer'); %>
-    </footer>
+    <footer><%- include('partials/footer'); %></footer>
   </body>
 </html>

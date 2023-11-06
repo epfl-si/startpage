@@ -10,14 +10,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // use res.render to load up an ejs view file
 
 // index page
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.render('pages/home');
 });
 
 // catalog page
-app.get('/catalog', function(req, res) {
-  let data = require(path.join(__dirname, 'data/EPFL-services.json'));
-  res.render('pages/catalog', {data});
+app.get('/catalog', function (req, res) {
+  const data = require(path.join(__dirname, 'data/EPFL-services.json'));
+  res.render('pages/catalog', { data });
 });
 
 app.listen(1337);
