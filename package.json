@@ -27,14 +27,25 @@
   },
   "eslintConfig": {
     "extends": "standard",
+    "globals": {
+      "$": true
+    },
     "rules": {
-      "max-len": [2, 80],
-      "semi": [2, "always"]
+      "max-len": [
+        2,
+        80
+      ],
+      "semi": [
+        2,
+        "always"
+      ]
     }
   },
   "nodemonConfig": {
     "verbose": true,
-    "watch": ["src"],
+    "watch": [
+      "src"
+    ],
     "ext": "js,json,ts,ejs,css"
   },
   "prettier": {

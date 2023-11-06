@@ -1,19 +1,16 @@
 # EPFL's Start Page
 
-
 ## About
 
 This repository hosts the code for https://startpage.epfl.ch, a website that
 can be used as a browser start page.
 
-
 ## Goals
 
-* Provide an excellent start page for the EPFL community
-* Be useful for different roles (students, researchers, admins, techies, etc...)
-* Should list every useful services of EPFL
-* The page must be intuitive, efficient, configurable and easy to use
-
+- Provide an excellent start page for the EPFL community
+- Be useful for different roles (students, researchers, admins, techies, etc...)
+- Should list every useful services of EPFL
+- The page must be intuitive, efficient, configurable and easy to use
 
 ## Todos and ideas
 
@@ -63,7 +60,6 @@ can be used as a browser start page.
   - [ ] Practical (urgency number)
 - [ ] Option to display global announcement / alerts / status
 
-
 ## Links
 
-* https://github.com/jnmcfly/awesome-startpage
+- https://github.com/jnmcfly/awesome-startpage
