@@ -7,7 +7,7 @@
     "eslint": "eslint src --ext=js",
     "eslint:fix": "eslint src --ext=js --fix",
     "lint": "pnpm prettier && pnpm eslint",
-    "lint:fix": "pnpm prettier:fix && npm eslint:fix",
+    "lint:fix": "pnpm prettier:fix && pnpm eslint:fix",
     "prettier": "prettier --check --ignore-unknown '**' '!**/*.js' '!pnpm-lock.yaml'",
     "prettier:fix": "prettier --write --ignore-unknown '**' '!**/*.js' '!pnpm-lock.yaml'",
     "test": "echo \"Error: no test specified\" && exit 1",
