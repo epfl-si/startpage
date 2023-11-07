@@ -6,23 +6,15 @@
 
   <body>
     <div class="container mt-5">
-      <div class="search-bar">
-        <div class="d-flex">
-          <div class="w-100 mr-2">
-            <p class="search-container icon-right">
-              <input
-                id="search-input"
-                type="search"
-                name="search"
-                placeholder="Search…"
-                autofocus="autofocus"
-                class="form-control form-control-search"
-              />
-              <svg aria-hidden="true" class="icon">
-                <use xlink:href="#icon-search"></use>
-              </svg>
-            </p>
+      EPFL start page
+      <hr>
+      <div class="col-auto">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div id="search_on" class="input-group-text">EPFL</div>
           </div>
+          <input id="dynamic_search" type="text" class="form-control" placeholder="Search…">
         </div>
       </div>
     </div>
