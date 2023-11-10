@@ -9,7 +9,7 @@
       <hr />
       <div class="col-auto">
         <label class="sr-only" for="dynamic_search">Search</label>
-        <div class="input-group mb-2">
+        <div class="input-group mb-2 search-container">
           <div class="input-group-prepend">
             <button
               id="search_on"
@@ -78,10 +78,13 @@
           </div>
           <input
             id="dynamic_search"
-            type="text"
+            type="search"
             class="form-control"
             placeholder="Search…"
           />
+          <svg aria-hidden="true" class="icon">
+            <use xlink:href="#icon-search"></use>
+          </svg>
         </div>
       </div>
     </div>
