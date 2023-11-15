@@ -1,5 +1,7 @@
 # EPFL's Start Page
 
+[![Test Status][github-actions-image-test]][github-actions-url-test]
+
 ## About
 
 This repository hosts the code for https://startpage.epfl.ch, a website that
@@ -63,3 +65,6 @@ can be used as a browser start page.
 ## Links
 
 - https://github.com/jnmcfly/awesome-startpage
+
+[github-actions-image-test]: https://github.com/epfl-si/startpage/actions/workflows/test.yml/badge.svg?branch=main
+[github-actions-url-test]: https://github.com/epfl-si/startpage/actions/workflows/test.yml
