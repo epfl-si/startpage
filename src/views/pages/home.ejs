@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('partials/head'); -%>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="welcome">EPFL Start page</div>
+      <hr />
+      <div class="col-auto">
+        <label class="sr-only" for="dynamic_search">Search</label>
+        <div class="input-group mb-2 search-container">
+          <div class="input-group-prepend">
+            <button
+              id="search_on"
+              class="btn bg-gray-200 dropdown-toggle"
+              type="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              EPFL
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://www.google.com/favicon.ico"
+                  width="16px"
+                />
+                Google
+              </a>
+              <a class="dropdown-item" href="#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://duckduckgo.com/favicon.ico"
+                  width="16px"
+                />
+                DuckDuckGo
+              </a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://www.epfl.ch/wp/6/wp-content/themes/wp-theme-2018/assets/favicons/favicon-16.png"
+                />
+                EPFL
+              </a>
+              <a class="dropdown-item" href="#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://go.epfl.ch/favicon/favicon.ico"
+                  width="16px"
+                />
+                EPFL Go
+              </a>
+              <a class="dropdown-item" href="#">EPFL Map</a>
+              <a class="dropdown-item" href="#">EPFL People</a>
+              <a class="dropdown-item" href="#">EPFL Units</a>
+              <a class="dropdown-item" href="#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/images/og-images/favicon.ico"
+                  width="16px"
+                />
+                ServiceNow
+              </a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://fr.wikipedia.org/static/apple-touch/wikipedia.png"
+                  width="16px"
+                />
+                Wikipedia
+              </a>
+            </div>
+          </div>
+          <input
+            id="dynamic_search"
+            type="search"
+            class="form-control"
+            placeholder="Search…"
+          />
+          <svg aria-hidden="true" class="icon">
+            <use xlink:href="#icon-search"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <footer><%- include('partials/footer'); -%></footer>
+  </body>
+</html>

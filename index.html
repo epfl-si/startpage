@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="stylesheet"
+  href="https://web2018.epfl.ch/6.4.0/css/elements.min.css"
+/>
+
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="favicons/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="favicons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="favicons/favicon-16x16.png"
+/>
+<link rel="manifest" href="favicons/site.webmanifest" />
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="favicons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#2b5797" />
+<meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+
+<link rel="stylesheet" href="css/search.css" />
+<title>EPFL Startpage</title>  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="welcome">EPFL Start page</div>
+      <hr />
+      <div class="col-auto">
+        <label class="sr-only" for="dynamic_search">Search</label>
+        <div class="input-group mb-2 search-container">
+          <div class="input-group-prepend">
+            <button
+              id="search_on"
+              class="btn bg-gray-200 dropdown-toggle"
+              type="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              EPFL
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="index.html#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://www.google.com/favicon.ico"
+                  width="16px"
+                />
+                Google
+              </a>
+              <a class="dropdown-item" href="index.html#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://duckduckgo.com/favicon.ico"
+                  width="16px"
+                />
+                DuckDuckGo
+              </a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item" href="index.html#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://www.epfl.ch/wp/6/wp-content/themes/wp-theme-2018/assets/favicons/favicon-16.png"
+                />
+                EPFL
+              </a>
+              <a class="dropdown-item" href="index.html#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://go.epfl.ch/favicon/favicon.ico"
+                  width="16px"
+                />
+                EPFL Go
+              </a>
+              <a class="dropdown-item" href="index.html#">EPFL Map</a>
+              <a class="dropdown-item" href="index.html#">EPFL People</a>
+              <a class="dropdown-item" href="index.html#">EPFL Units</a>
+              <a class="dropdown-item" href="index.html#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/images/og-images/favicon.ico"
+                  width="16px"
+                />
+                ServiceNow
+              </a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item" href="index.html#">
+                <img
+                  class="dropdown-item-image"
+                  src="https://fr.wikipedia.org/static/apple-touch/wikipedia.png"
+                  width="16px"
+                />
+                Wikipedia
+              </a>
+            </div>
+          </div>
+          <input
+            id="dynamic_search"
+            type="search"
+            class="form-control"
+            placeholder="Search…"
+          />
+          <svg aria-hidden="true" class="icon">
+            <use xlink:href="#icon-search"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <footer><script>
+  svgPath = 'https://web2018.epfl.ch/6.4.0/icons/icons.svg';
+  featherSvgPath = 'https://web2018.epfl.ch/6.4.0/icons/feather-sprite.svg';
+</script>
+<script src="https://web2018.epfl.ch/6.4.0/js/elements.min.js"></script>
+<script src="js/search.js"></script>
+</footer>
+  </body>
+</html>
