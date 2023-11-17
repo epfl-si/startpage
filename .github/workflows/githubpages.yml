@@ -32,9 +32,9 @@ jobs:
         run: sleep 5
 
       - name: Wget site
-        run: wget -mkEpnp --no-host-directories http://localhost:1337/
+        run: wget -mkEpnp -P ./website --no-host-directories http://localhost:1337/
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .
+          folder: website
