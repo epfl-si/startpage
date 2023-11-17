@@ -3,7 +3,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - feature-githubpages
+      - main
 
 jobs:
   deploy-github-pages:
