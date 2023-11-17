@@ -1,6 +1,0 @@
-/*
-  Fix visibility of magnifying glass icon.
-*/
-.search-container svg {
-  z-index: 4;
-}
