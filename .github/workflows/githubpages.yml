@@ -1,0 +1,36 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - feature-githubpages
+
+jobs:
+  deploy-github-pages:
+    runs-on: ubuntu-latest
+    name: Deploy GitHub Pages
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Pnpm install
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          run_install: true
+
+      - name: Start app
+        run: node ./src/server.js
+        background: true
+
+      - name: Wait server to start
+        run: sleep 5
+
+      - name: wget site
+        run: wget -mkEpnp --no-host-directories http://localhost:1337/
