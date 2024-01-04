@@ -3,7 +3,7 @@ const setSearchOn = (searchEngine, keepValue = '') => {
   $('#dynamic_search').val(keepValue);
 };
 const doSearchAction = (terms) => {
-  const searchEngine = $('#search_on').text();
+  const searchEngine = $('#search_on').text().trim();
   if (searchEngine === 'DuckDuckGo') {
     window.open('https://duckduckgo.com/?q=' + terms);
   }
