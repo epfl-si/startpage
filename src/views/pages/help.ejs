@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('partials/head'); -%>
+  </head>
+  <body>
+    <div class="container mt-5 main-content">
+      <div class="welcome"><a href="/">Startpage</a> > Help</div>
+      <hr />
+      <div class="col-auto">
+        <div class="row">
+          <div class="col-sm">
+            <h3>Search input</h3>
+            <p>
+              When the focus is in the search input, it is possible to use
+              shortcut to switch the search engine:
+            </p>
+            <table class="table table-boxed">
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Search engine</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><kbd>?</kbd></td>
+                  <td>Google</td>
+                </tr>
+                <tr>
+                  <td><kbd>d</kbd></td>
+                  <td>DuckDuckGo</td>
+                </tr>
+                <tr>
+                  <td><kbd>g</kbd>, <kbd>go</kbd></td>
+                  <td>go.epfl.ch</td>
+                </tr>
+                <tr>
+                  <td><kbd>m</kbd></td>
+                  <td>map.epfl.ch</td>
+                </tr>
+                <tr>
+                  <td><kbd>p</kbd></td>
+                  <td>people.epfl.ch</td>
+                </tr>
+                <tr>
+                  <td><kbd>sn</kbd></td>
+                  <td>epfl.servicenow.com</td>
+                </tr>
+                <tr>
+                  <td><kbd>u</kbd></td>
+                  <td>units.epfl.ch</td>
+                </tr>
+                <tr>
+                  <td><kbd>w</kbd></td>
+                  <td>Wikipedia</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <h3>Page shortcut</h3>
+            <table class="table table-boxed">
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><kbd>Esc</kbd></td>
+                  <td>Reset the seaach input and focus it</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('partials/footer'); -%>
+  </body>
+</html>
