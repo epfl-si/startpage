@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('partials/head'); -%>
+    <!-- this should be moved to site.css when merged (https://github.com/epfl-si/startpage/pull/26) -->
+    <style>
+      kbd {
+        background-color: #eee;
+        border-radius: 3px;
+        border: 1px solid #b4b4b4;
+        box-shadow:
+          0 1px 1px rgba(0, 0, 0, 0.2),
+          0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+        color: #333;
+        display: inline-block;
+        font-size: 0.85em;
+        font-weight: 700;
+        line-height: 1;
+        padding: 3px 5px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="welcome"><a href="/">Startpage</a> > Help</div>
+      <hr />
+      <div class="col-auto">
+        <div class="row">
+          <div class="col-sm">
+            <h3>Search input</h3>
+            <p>
+              When the focus is in the search input, it is possible to use
+              shortcut to switch the search engine:
+            </p>
+            <table class="table table-boxed">
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Search engine</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><kbd>?</kbd></td>
+                  <td>Google</td>
+                </tr>
+                <tr>
+                  <td><kbd>d</kbd></td>
+                  <td>DuckDuckGo</td>
+                </tr>
+                <tr>
+                  <td><kbd>g</kbd>, <kbd>go</kbd></td>
+                  <td>go.epfl.ch</td>
+                </tr>
+                <tr>
+                  <td><kbd>m</kbd></td>
+                  <td>map.epfl.ch</td>
+                </tr>
+                <tr>
+                  <td><kbd>p</kbd></td>
+                  <td>people.epfl.ch</td>
+                </tr>
+                <tr>
+                  <td><kbd>sn</kbd></td>
+                  <td>epfl.servicenow.com</td>
+                </tr>
+                <tr>
+                  <td><kbd>u</kbd></td>
+                  <td>units.epfl.ch</td>
+                </tr>
+                <tr>
+                  <td><kbd>w</kbd></td>
+                  <td>Wikipedia</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <h3>Page shortcut</h3>
+            <table class="table table-boxed">
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><kbd>Esc</kbd></td>
+                  <td>Reset the seaach input and focus it</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer><%- include('partials/footer'); -%></footer>
+  </body>
+</html>

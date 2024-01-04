@@ -18,6 +18,10 @@ app.get('/', function (req, res) {
 app.get('/about', function (req, res) {
   res.render('pages/about', {});
 });
+// help page
+app.get('/help', function (req, res) {
+  res.render('pages/help', {});
+});
 // catalog page
 app.get('/catalog', function (req, res) {
   const data = require(path.join(__dirname, 'data/EPFL-services.json'));
