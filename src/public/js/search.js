@@ -7,14 +7,25 @@ const doSearchAction = (terms) => {
   if (searchEngine === 'DuckDuckGo') {
     window.open('https://duckduckgo.com/?q=' + terms);
   }
-  if (searchEngine === 'EPFL Go') {
-    window.open('https://go.epfl.ch/' + terms);
-  }
   if (searchEngine === 'Google') {
     window.open('https://www.google.com/search?hl=en&q=' + terms);
   }
   if (searchEngine === 'EPFL') {
     window.open('https://search.epfl.ch/?q=' + terms);
+  }
+  if (searchEngine === 'EPFL Go') {
+    window.open('https://go.epfl.ch/' + terms);
+  }
+  if (searchEngine === 'EPFL IT Directory') {
+    window.open(
+      // eslint-disable-next-line
+      'https://network.epfl.ch/epnet/sre.pl/annuaire?etape=affiche_liste_mach&listeext=on&nom=' +
+        terms +
+        '*'
+    );
+  }
+  if (searchEngine === 'EPFL News') {
+    window.open('https://search.epfl.ch/?filter=news&q=' + terms);
   }
   if (searchEngine === 'EPFL Map') {
     window.open('https://plan.epfl.ch/?room=' + terms);
@@ -62,6 +73,13 @@ $(function () {
         case 'g':
         case 'go':
           setSearchOn('EPFL Go', arrayOfTerms[1]);
+          break;
+        case 'dir':
+        case 'epnet':
+          setSearchOn('EPFL IT Directory');
+          break;
+        case 'n':
+          setSearchOn('EPFL News');
           break;
         case 'm':
           setSearchOn('EPFL Map');
