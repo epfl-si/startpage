@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const version = require(path.join(__dirname, '../package.json')).version;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -11,13 +12,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // index page
 app.get('/', function (req, res) {
-  res.render('pages/home');
+  res.render('pages/home', { version });
 });
 
 // catalog page
 app.get('/catalog', function (req, res) {
   const data = require(path.join(__dirname, 'data/EPFL-services.json'));
-  res.render('pages/catalog', { data });
+  res.render('pages/catalog', { data, version });
 });
 
 app.listen(1337);
