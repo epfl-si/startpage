@@ -1,0 +1,40 @@
+name: Build and deploy on GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-github-pages:
+    runs-on: ubuntu-latest
+    name: Deploy GitHub Pages
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Pnpm install
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          run_install: true
+
+      - name: Start app
+        run: node ./src/server.js &
+
+      - name: Wait server to start
+        run: sleep 5
+
+      - name: Wget site
+        run: wget -mkEpnp -P ./website --no-host-directories http://localhost:1337/
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: website
