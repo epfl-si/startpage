@@ -15,6 +15,14 @@ app.get('/', function (req, res) {
   res.render('pages/home', { version });
 });
 
+// about page
+app.get('/about', function (req, res) {
+  res.render('pages/about', { version });
+});
+// help page
+app.get('/help', function (req, res) {
+  res.render('pages/help', { version });
+});
 // catalog page
 app.get('/catalog', function (req, res) {
   const data = require(path.join(__dirname, 'data/EPFL-services.json'));
