@@ -92,5 +92,32 @@ is changing and why. The commit message should include:
 - Add "Fixes" or "Closes" before the issue number if the addition of that commit
   fully resolves the issue.
 
-[EditorConfig]: https://editorconfig.org/
-[CHANGELOG.md]: ./CHANGELOG.md
+## Version management and CHANGELOG
+
+Please use [Semantic Versioning](semver) when changing version. Version is set
+in:
+
+- [package.json](./package.json)
+- In a Git tag
+- In a GitHub release (https://github.com/epfl-si/startpage/releases)
+
+Any major and minor version have to update the [CHANGELOG.md]. Lines of the
+[CHANGELOG.md] can be generated with
+
+```sh
+git --no-pager log --pretty=format:'- [`%h`](http://github.com/epfl-si/startpage/commit/%H") `%as` %s'
+```
+
+or if you are using [Git Extras]:
+
+```sh
+# Configure the changelog format (once)
+git config changelog.format '- [`%h`](http://github.com/epfl-si/startpage/commit/%H") `%as` %s'
+# Generate the change log
+git changelog -x -s v1.0.1
+```
+
+[editorconfig]: https://editorconfig.org/
+[changelog.md]: ./CHANGELOG.md
+[semver]: https://semver.org/
+[git extras]: https://github.com/tj/git-extras
