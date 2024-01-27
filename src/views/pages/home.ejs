@@ -11,6 +11,8 @@
         <label class="sr-only" for="dynamic_search">Search</label>
         <div class="input-group mb-2 search-container">
           <div class="input-group-prepend">
+            <% defaultSettings.searchEngines.forEach(function(se, i) { if
+            (se.default) { %>
             <button
               id="search_on"
               class="btn bg-gray-200 dropdown-toggle"
@@ -19,98 +21,23 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              EPFL
+              <%= se.name %>
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://www.google.com/favicon.ico"
-                  width="16px"
-                />
-                Google
-              </a>
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://duckduckgo.com/favicon.ico"
-                  width="16px"
-                />
-                DuckDuckGo
-              </a>
+              <% } }); var group=2;
+              defaultSettings.searchEngines.forEach(function(se, i) { if (group
+              == se.order[0]){ // add the separator %>
               <div role="separator" class="dropdown-divider"></div>
+              <% group++; } %>
               <a class="dropdown-item" href="#">
                 <img
                   class="dropdown-item-image"
-                  src="https://www.epfl.ch/wp/6/wp-content/themes/wp-theme-2018/assets/favicons/favicon-16.png"
+                  src="<%= se.icon %>"
+                  width="16px"
                 />
-                EPFL
+                <%= se.name %>
               </a>
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://go.epfl.ch/favicon/favicon.ico"
-                  width="16px"
-                />
-                EPFL Go
-              </a>
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-network.png"
-                  width="16px"
-                />
-                EPFL IT Directory
-              </a>
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-map.png"
-                  width="16px"
-                />
-                EPFL Map</a
-              >
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-news.png"
-                  width="16px"
-                />
-                EPFL News</a
-              >
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-people.png"
-                  width="16px"
-                />
-                EPFL People</a
-              >
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-units.png"
-                  width="16px"
-                />
-                EPFL Units</a
-              >
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/images/og-images/favicon.ico"
-                  width="16px"
-                />
-                ServiceNow
-              </a>
-              <div role="separator" class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">
-                <img
-                  class="dropdown-item-image"
-                  src="https://fr.wikipedia.org/static/apple-touch/wikipedia.png"
-                  width="16px"
-                />
-                Wikipedia
-              </a>
+              <% }); %>
             </div>
           </div>
           <input
