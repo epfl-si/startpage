@@ -12,7 +12,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // index page
 app.get('/', function (req, res) {
-  res.render('pages/home', { version });
+  const defaultSettings = require(path.join(
+    __dirname,
+    'public/settings/default.json'
+  ));
+  res.render('pages/home', { defaultSettings, version });
 });
 
 // about page

@@ -1,0 +1,86 @@
+{
+  "settings": {
+    "darkMode": true,
+    "backgroundImage": [""]
+  },
+  "searchEngines": [
+    {
+      "name": "Google",
+      "URL": "https://www.google.com/search?hl=en&q=",
+      "icon": "https://www.google.com/favicon.ico",
+      "keyword": ["?"],
+      "order": "11"
+    },
+    {
+      "name": "DuckDuckGo",
+      "URL": "https://duckduckgo.com/?q=",
+      "icon": "https://duckduckgo.com/favicon.ico",
+      "keyword": ["d"],
+      "order": "12"
+    },
+    {
+      "name": "EPFL",
+      "default": true,
+      "URL": "https://search.epfl.ch/?q=",
+      "icon": "https://www.epfl.ch/wp/6/wp-content/themes/wp-theme-2018/assets/favicons/favicon-16.png",
+      "keyword": ["e"],
+      "order": "21"
+    },
+    {
+      "name": "EPFL Go",
+      "URL": "https://go.epfl.ch/",
+      "icon": "https://go.epfl.ch/favicon/favicon.ico",
+      "keyword": ["g", "go"],
+      "order": "22"
+    },
+    {
+      "name": "EPFL IT Directory",
+      "URL": "https://network.epfl.ch/epnet/sre.pl/annuaire?etape=affiche_liste_mach&listeext=on&nom=",
+      "icon": "https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-network.png",
+      "keyword": ["epnet", "dir"],
+      "order": "23"
+    },
+    {
+      "name": "EPFL News",
+      "URL": "https://search.epfl.ch/?filter=news&q=",
+      "icon": "https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-news.png",
+      "keyword": ["actu", "n"],
+      "order": "24"
+    },
+    {
+      "name": "EPFL Map",
+      "URL": "https://plan.epfl.ch/?room=",
+      "icon": "https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-map.png",
+      "keyword": ["m"],
+      "order": "25"
+    },
+    {
+      "name": "EPFL People",
+      "URL": "https://search.epfl.ch/?filter=people&q=",
+      "icon": "https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-people.png",
+      "keyword": ["p"],
+      "order": "26"
+    },
+    {
+      "name": "EPFL Units",
+      "URL": "https://search.epfl.ch/?filter=unit&q=",
+      "icon": "https://raw.githubusercontent.com/ponsfrilus/searchplugins/master/img/epfl-search-units.png",
+      "keyword": ["u"],
+      "order": "27"
+    },
+    {
+      "name": "ServiceNow",
+      "URL": "https://support.epfl.ch/backoffice/$sn_global_search_results.do?sysparm_view=text_search&sysparm_search=",
+      "icon": "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/images/og-images/favicon.ico",
+      "keyword": ["sn"],
+      "order": "28"
+    },
+    {
+      "name": "Wikipedia",
+      "URL": "https://en.wikipedia.org/w/index.php?search=",
+      "icon": "https://fr.wikipedia.org/static/apple-touch/wikipedia.png",
+      "keyword": ["w"],
+      "order": "31"
+    }
+  ]
+}
