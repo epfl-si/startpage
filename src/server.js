@@ -29,5 +29,6 @@ app.get('/catalog', function (req, res) {
   res.render('pages/catalog', { data, version });
 });
 
-app.listen(1337);
-console.log('Server listening on port 1337');
+const port = process.env.PORT || 1337;
+app.listen(port);
+console.log(`Server listening on port ${port}`);
