@@ -2,6 +2,19 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: white;
+}
+
+.dark-mode,
+.dark-mode a,
+.dark-mode td {
+  background-color: #162736;
+  color: #bcbcc4;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: initial;
+  color: initial;
 }
 
 .main-content {
