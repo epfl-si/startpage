@@ -1,0 +1,46 @@
+http:
+  routers:
+    prometheus:
+      rule: 'Host(`{{ env "STARTPAGE_URL" | trimAll "\"" }}`) && (PathPrefix(`/metrics`) || PathPrefix(`/prometheus`))'
+      entrypoints:
+        - https
+      tls: {}
+      service: prometheus@internal
+
+    dashboard:
+      rule: 'Host(`{{ env "STARTPAGE_URL" | trimAll "\"" }}`) && (PathPrefix(`/dashboard`)'
+      entrypoints:
+        - https
+      tls: {}
+      service: api@internal
+
+    dashboard-http2https:
+      rule: 'Host(`{{ env "STARTPAGE_URL" | trimAll "\"" }}`) && (PathPrefix(`/dashboard`)'
+      middlewares:
+        - https_redirect
+      service: api@internal
+
+    startpage:
+      rule: 'Host(`{{ env "STARTPAGE_URL" | trimAll "\"" }}`)'
+      entrypoints:
+        - https
+      tls: {}
+      service: demotraefik
+
+    startpage-http2https:
+      rule: 'Host(`{{ env "STARTPAGE_URL" | trimAll "\"" }}`)'
+      middlewares:
+        - https_redirect
+      service: api@internal
+
+  middlewares:
+    https_redirect:
+      redirectscheme:
+        scheme: https
+        permanent: true
+
+  services:
+    demotraefik:
+      loadBalancer:
+        servers:
+          - url: 'http://startpage:1337'

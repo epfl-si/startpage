@@ -1,0 +1,19 @@
+services:
+  startpage:
+    container_name: startpage
+    build:
+      context: .
+
+  traefik:
+    container_name: sp_traefik
+    image: traefik:v3.1
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      # Map the static configuration into the container
+      - ./traefik/config/traefik.yml:/etc/traefik/traefik.yml:ro
+      # Map the dynamic configuration into the container
+      - ./traefik/config/dynamic.yml:/etc/traefik/dynamic.yml:ro
+    environment:
+      - STARTPAGE_URL=startpage.localhost # Dev

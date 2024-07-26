@@ -25,8 +25,6 @@ COPY ./src ./src
 
 # Set internal port
 ENV PORT=1337
-# Expose desired port
-EXPOSE 1337
 
 # Let's be sure to use the user "node"
 USER node
