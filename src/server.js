@@ -12,21 +12,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // index page
 app.get('/', function (req, res) {
-  res.render('pages/home', { version });
+  // @TODO: the problem with this approach is that we can not change the page
+  //        dynamically after the first load.
+  const defaultSettings = require(path.join(
+    __dirname,
+    'public/settings/default.json'
+  ));
+  res.render('pages/home', { pageName: 'Home', defaultSettings, version });
 });
 
 // about page
 app.get('/about', function (req, res) {
-  res.render('pages/about', { version });
+  res.render('pages/about', { pageName: 'About', version });
 });
 // help page
 app.get('/help', function (req, res) {
-  res.render('pages/help', { version });
+  res.render('pages/help', { pageName: 'Help', version });
 });
 // catalog page
 app.get('/catalog', function (req, res) {
   const data = require(path.join(__dirname, 'data/EPFL-services.json'));
-  res.render('pages/catalog', { data, version });
+  res.render('pages/catalog', { pageName: 'Catalog', data, version });
 });
 
 const port = process.env.PORT || 1337;

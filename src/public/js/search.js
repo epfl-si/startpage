@@ -1,51 +1,48 @@
+const localStorageKey = 'startpage';
+
+function saveLocalStorage(data) {
+  localStorage.setItem(localStorageKey, JSON.stringify(data));
+}
+function getLocalStorage() {
+  return JSON.parse(localStorage.getItem(localStorageKey));
+}
+
+async function loadSettings(settingFileName = 'default') {
+  try {
+    const response = await fetch(`/settings/${settingFileName}.json`);
+    const data = await response.json();
+    removeItem(localStorageKey);
+    saveLocalStorage(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+loadSettings();
+const settings = getLocalStorage();
+
+// Get the select search engine
 const setSearchOn = (searchEngine, keepValue = '') => {
   $('#search_on').text(searchEngine);
   $('#dynamic_search').val(keepValue);
 };
+
+// Do the redirection to the select search engine with the input terms
 const doSearchAction = (terms) => {
   const searchEngine = $('#search_on').text().trim();
-  if (searchEngine === 'DuckDuckGo') {
-    window.open('https://duckduckgo.com/?q=' + terms);
-  }
-  if (searchEngine === 'Google') {
-    window.open('https://www.google.com/search?hl=en&q=' + terms);
-  }
-  if (searchEngine === 'EPFL') {
-    window.open('https://search.epfl.ch/?q=' + terms);
-  }
-  if (searchEngine === 'EPFL Go') {
-    window.open('https://go.epfl.ch/' + terms);
-  }
-  if (searchEngine === 'EPFL IT Directory') {
-    window.open(
-      // eslint-disable-next-line
-      'https://network.epfl.ch/epnet/sre.pl/annuaire?etape=affiche_liste_mach&listeext=on&nom=' +
-        terms +
-        '*'
-    );
-  }
-  if (searchEngine === 'EPFL News') {
-    window.open('https://search.epfl.ch/?filter=news&q=' + terms);
-  }
-  if (searchEngine === 'EPFL Map') {
-    window.open('https://plan.epfl.ch/?room=' + terms);
-  }
-  if (searchEngine === 'EPFL People') {
-    window.open('https://search.epfl.ch/?filter=people&q=' + terms);
-  }
-  if (searchEngine === 'EPFL Units') {
-    window.open('https://search.epfl.ch/?filter=unit&q=' + terms);
-  }
-  if (searchEngine === 'ServiceNow') {
-    window.open(
-      // eslint-disable-next-line
-      'https://support.epfl.ch/backoffice/$sn_global_search_results.do?sysparm_view=text_search&sysparm_search=' +
-        terms
-    );
-  }
-  if (searchEngine === 'Wikipedia') {
-    window.open('https://en.wikipedia.org/w/index.php?search=' + terms);
-  }
+  const activeSE = settings.searchEngines.find(
+    (se) => se.name === searchEngine
+  );
+  console.debug(' → redirect to', activeSE.URL + terms);
+  window.open(activeSE.URL + terms);
+};
+
+const getDefaultSearchEngine = () => {
+  return settings.searchEngines.find((se) => se.default);
+};
+
+const getSearchEngineOnSearchKeyword = (key) => {
+  return settings.searchEngines.find((se) => se.keyword.includes(key));
 };
 
 $(function () {
@@ -58,46 +55,15 @@ $(function () {
     const terms = $(this).val();
     // backspace is pressed and input is empty
     if (e.keyCode === 8 && !terms) {
-      setSearchOn('EPFL');
+      // Choose the default search engine
+      setSearchOn(getDefaultSearchEngine().name);
     }
     // space bar is pressed
     if (e.keyCode === 32 && terms.length > 1) {
       const arrayOfTerms = terms.trim().split(' ');
-      switch (arrayOfTerms[0]) {
-        case '?':
-          setSearchOn('Google');
-          break;
-        case 'd':
-          setSearchOn('DuckDuckGo');
-          break;
-        case 'g':
-        case 'go':
-          setSearchOn('EPFL Go', arrayOfTerms[1]);
-          break;
-        case 'dir':
-        case 'epnet':
-          setSearchOn('EPFL IT Directory');
-          break;
-        case 'n':
-          setSearchOn('EPFL News');
-          break;
-        case 'm':
-          setSearchOn('EPFL Map');
-          break;
-        case 'p':
-          setSearchOn('EPFL People');
-          break;
-        case 'sn':
-          setSearchOn('ServiceNow');
-          break;
-        case 'u':
-          setSearchOn('EPFL Units');
-          break;
-        case 'w':
-          setSearchOn('Wikipedia');
-          break;
-        default:
-        // do nothing
+      const activeSE = getSearchEngineOnSearchKeyword(arrayOfTerms[0]);
+      if (activeSE.name) {
+        setSearchOn(activeSE.name);
       }
     }
     // enter is pressed
