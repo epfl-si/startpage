@@ -1,0 +1,12 @@
+.custom-control-label::before {
+  top: 4px;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: #adb5bd;
+}
